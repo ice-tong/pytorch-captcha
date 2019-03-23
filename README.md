@@ -197,7 +197,7 @@ DataLoader是Dataset的进一步封装，Dataset每次通过`__getitem__`方法�
 5. 保存模型  
 主要代码如下：  
   
-	cnn = CNN()
+    cnn = CNN()
     if torch.cuda.is_available():
         cnn.cuda()
     optimizer = torch.optim.Adam(cnn.parameters(), lr=base_lr)
