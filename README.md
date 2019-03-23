@@ -179,7 +179,7 @@ Dataset是数据样本的封装，可以很方便的读取数据。实现一个D
 DataLoader是Dataset的进一步封装，Dataset每次通过`__getitem__`方法取到的是一个样本，经过DataLoader封装为dataloader后，每次取的是一个batch大小的样本批次。  
 
 	transforms = Compose([ToTensor()])
-	train_dataset = CaptchaData('./data/captcha_images', transform=transforms)
+	train_dataset = CaptchaData('./data/train', transform=transforms)
     train_data_loader = DataLoader(train_dataset, batch_size=batch_size, num_workers=0, 
                              shuffle=True, drop_last=True)
     test_data = CaptchaData('./data/test', transform=transforms)
