@@ -80,8 +80,8 @@ def train():
             optimizer.step()
             
             acc = calculat_acc(output, target)
-            acc_history.append(acc)
-            loss_history.append(loss)
+            acc_history.append(float(acc))
+            loss_history.append(float(loss))
         print('train_loss: {:.4}|train_acc: {:.4}'.format(
                 torch.mean(torch.Tensor(loss_history)),
                 torch.mean(torch.Tensor(acc_history)),
@@ -99,7 +99,7 @@ def train():
             output = cnn(img)
             
             acc = calculat_acc(output, target)
-            acc_history.append(acc)
+            acc_history.append(float(acc))
             loss_history.append(float(loss))
         print('test_loss: {:.4}|test_acc: {:.4}'.format(
                 torch.mean(torch.Tensor(loss_history)),
